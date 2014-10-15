@@ -22,6 +22,11 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def drafts
+    @posts = Post.unpublished
+    render :index
+  end
+
   # POST /posts
   # POST /posts.json
   def create
