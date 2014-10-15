@@ -80,3 +80,4 @@ class PostsController < ApplicationController
 end
 
 # any public method is an action, private are helpers
+# These are controller actions
