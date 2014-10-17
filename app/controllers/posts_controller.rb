@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-  @posts = Post.most_recent
+    @posts = Post.most_recent
   end
 
   # GET /posts/1
@@ -25,6 +25,11 @@ class PostsController < ApplicationController
   def drafts
     @posts = Post.unpublished
     render :index
+  end
+
+  def search
+    @results = Post.search(params[:q])
+    render :search
   end
 
   # POST /posts
@@ -68,15 +73,15 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:subject, :body, :published_at)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:subject, :body, :published_at)
+  end
 end
 
 # any public method is an action, private are helpers

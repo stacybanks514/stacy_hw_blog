@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   resources :posts do
     get 'drafts', on: :collection
-  end
+    get 'search', on: :collection
+  end 
+
+resources :users, :only =>[:index, :show]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
