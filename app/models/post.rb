@@ -3,8 +3,7 @@ class Post < ActiveRecord::Base
     scope :unpublished, -> { where("published_at > '#{Date.today}'")}
 
     def self.search(q)
-            result = Post.where(['body LIKE ? OR subject LIKE ?', "%#{q}%", "%#{q}%"])
-            
+      result = Post.where(['body LIKE ? OR subject LIKE ?', "%#{q}%", "%#{q}%"])
     end 
 end
 

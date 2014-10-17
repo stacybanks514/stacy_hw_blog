@@ -29,7 +29,6 @@ class PostsController < ApplicationController
 
   def search
     @results = Post.search(params[:q])
-    render :search
   end
 
   # POST /posts
