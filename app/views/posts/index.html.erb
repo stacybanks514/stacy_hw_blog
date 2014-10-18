@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Stacy's Blog</h1>
+<h1 class="welcome">Stacy's Blog</h1>
 
 <table>
   <thead>
@@ -28,7 +28,7 @@
 </table>
 
 <br>
-
+<div class="links">
 <%= link_to 'New Post', new_post_path %>
 <%= form_tag(search_posts_path, method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
@@ -36,4 +36,7 @@
   <%= submit_tag("Search") %>
 <% end %>
 <a href="https://www.google.com/">Search Google</a>
+<br>
+<%= link_to 'Home', root_path %>
+</div>
 </div>
