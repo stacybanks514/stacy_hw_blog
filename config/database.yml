@@ -25,3 +25,5 @@ production:
   adapter: postgresql
   encoding: unicode
   database: stacy_hw_blog
+
+
