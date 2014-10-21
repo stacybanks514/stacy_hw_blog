@@ -80,3 +80,12 @@ td:nth-child(even){
   font-family: courier;
   margin: auto;
 }
+p.button > a {
+  color: white;
+  font-size: 12pt;
+}
+strong {
+  color: purple;
+  font-size: 10pt;
+}
+

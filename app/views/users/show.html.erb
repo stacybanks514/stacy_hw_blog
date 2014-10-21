@@ -1,0 +1,13 @@
+<h1> Welcome, you poor unfortunate soul! </h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p class="button"><%= link_to 'Post Page', posts_path %></p>
+<p class="button"><%= link_to 'Back', users_path %></p>
