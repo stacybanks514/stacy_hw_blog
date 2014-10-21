@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     get 'search', on: :collection
   end 
 
-resources :users, :only =>[:index, :show]
+resources :users
+get '/signup', to: 'users#new'
 
 root :to => 'welcome#home'
 
