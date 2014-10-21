@@ -83,6 +83,6 @@ feature "Manage Post" do
     # click_on 'Remove'
 
     expect(current_path).to eq(posts_path)
-    expect(posts_path).not_to have_content(/Test Post/)
+    expect(posts_path).to_not have_content(/Test Post/)
   end
 end
