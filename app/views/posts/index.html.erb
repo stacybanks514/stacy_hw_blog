@@ -13,17 +13,21 @@
   </thead>
 
   <tbody>
+    <% if @posts.empty? %>
+      <td class="noposts">No Posts available</td>
+    <% else %>
     <% @posts.each do |post| %>
       <tr>
 
-        <td><%= post.subject %></td>
-        <td><%= post.body %></td>
-        <td><%= post.published_at %></td>
+        <td class="subject"><%= post.subject %></td>
+        <td class="body"><%= post.body %></td>
+        <td class="published_at"><%= post.published_at %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="notice"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
